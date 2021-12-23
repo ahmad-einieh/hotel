@@ -3,7 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import com.tables;
+
+import java.awt.*;
 import java.sql.*;
+import javax.swing.*;
+import java.awt.event.*;
 
 /**
  * @author ahmad
@@ -16,6 +21,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
     public Hotel_Mangment() {
         initComponents();
     }
+    tables t = new tables();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,6 +44,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
         insertHotelName1 = new javax.swing.JTextField();
         updateHotel1 = new javax.swing.JButton();
         removeHotel1 = new javax.swing.JButton();
+        displayHotel = new javax.swing.JButton();
         RoomPanel = new javax.swing.JPanel();
         removeRoom = new javax.swing.JButton();
         insertRoom = new javax.swing.JButton();
@@ -50,6 +57,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
         hotelLocInsert3 = new javax.swing.JLabel();
         HotelIDInsert5 = new javax.swing.JLabel();
         roomHotelId = new javax.swing.JTextField();
+        displayRoom = new javax.swing.JButton();
         EmployeePanel = new javax.swing.JPanel();
         removeEmployee = new javax.swing.JButton();
         updateEmployee = new javax.swing.JButton();
@@ -62,6 +70,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
         empSalary = new javax.swing.JTextField();
         EmpIDinsert1 = new javax.swing.JLabel();
         empHotelID = new javax.swing.JTextField();
+        displayRoom1 = new javax.swing.JButton();
         CustomerPanel = new javax.swing.JPanel();
         removeCustomer = new javax.swing.JButton();
         updateCustomer = new javax.swing.JButton();
@@ -72,6 +81,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
         customerName = new javax.swing.JTextField();
         CusRoomNumber = new javax.swing.JTextField();
         roomnumberinsert = new javax.swing.JLabel();
+        displayCus = new javax.swing.JButton();
         RolePanel = new javax.swing.JPanel();
         removeRole = new javax.swing.JButton();
         updateRole = new javax.swing.JButton();
@@ -80,6 +90,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
         roleName = new javax.swing.JTextField();
         roleRankinsert = new javax.swing.JLabel();
         roleRank = new javax.swing.JTextField();
+        displayRole = new javax.swing.JButton();
         Workpanel = new javax.swing.JPanel();
         removeWork = new javax.swing.JButton();
         updateWork = new javax.swing.JButton();
@@ -88,6 +99,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
         workEmpID = new javax.swing.JTextField();
         roleRankinsert1 = new javax.swing.JLabel();
         workRoleName = new javax.swing.JTextField();
+        displayWork = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(53, 205, 153));
@@ -117,7 +129,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 instertHotel2ActionPerformed(evt);
             }
         });
-        HotelPanel.add(instertHotel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 160, 40));
+        HotelPanel.add(instertHotel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 160, 40));
 
         hotelLocInsert1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         hotelLocInsert1.setForeground(new java.awt.Color(240, 240, 240));
@@ -163,7 +175,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 updateHotel1ActionPerformed(evt);
             }
         });
-        HotelPanel.add(updateHotel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, 160, 40));
+        HotelPanel.add(updateHotel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 160, 40));
 
         removeHotel1.setBackground(new java.awt.Color(53, 205, 153));
         removeHotel1.setText("remove");
@@ -173,7 +185,17 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 removeHotel1ActionPerformed(evt);
             }
         });
-        HotelPanel.add(removeHotel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 280, 160, 40));
+        HotelPanel.add(removeHotel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, 160, 40));
+
+        displayHotel.setBackground(new java.awt.Color(53, 205, 153));
+        displayHotel.setText("display");
+        displayHotel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        displayHotel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                displayHotelActionPerformed(evt);
+            }
+        });
+        HotelPanel.add(displayHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 280, 160, 40));
 
         jTabbedPane1.addTab("Hotel", HotelPanel);
 
@@ -188,7 +210,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 removeRoomActionPerformed(evt);
             }
         });
-        RoomPanel.add(removeRoom, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 300, 160, 40));
+        RoomPanel.add(removeRoom, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 300, 160, 40));
 
         insertRoom.setBackground(new java.awt.Color(53, 205, 153));
         insertRoom.setText("insert");
@@ -208,7 +230,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 updateRoomActionPerformed(evt);
             }
         });
-        RoomPanel.add(updateRoom, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 160, 40));
+        RoomPanel.add(updateRoom, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 160, 40));
 
         roomPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -258,6 +280,16 @@ public class Hotel_Mangment extends javax.swing.JFrame {
         });
         RoomPanel.add(roomHotelId, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, 160, -1));
 
+        displayRoom.setBackground(new java.awt.Color(53, 205, 153));
+        displayRoom.setText("display");
+        displayRoom.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        displayRoom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                displayRoomActionPerformed(evt);
+            }
+        });
+        RoomPanel.add(displayRoom, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 300, 160, 40));
+
         jTabbedPane1.addTab("Room", RoomPanel);
 
         EmployeePanel.setBackground(new java.awt.Color(32, 33, 55));
@@ -271,7 +303,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 removeEmployeeActionPerformed(evt);
             }
         });
-        EmployeePanel.add(removeEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 320, 160, 40));
+        EmployeePanel.add(removeEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 300, 160, 40));
 
         updateEmployee.setBackground(new java.awt.Color(53, 205, 153));
         updateEmployee.setText("update");
@@ -281,7 +313,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 updateEmployeeActionPerformed(evt);
             }
         });
-        EmployeePanel.add(updateEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 160, 40));
+        EmployeePanel.add(updateEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, 160, 40));
 
         insertEmployee.setBackground(new java.awt.Color(53, 205, 153));
         insertEmployee.setText("insert");
@@ -291,7 +323,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 insertEmployeeActionPerformed(evt);
             }
         });
-        EmployeePanel.add(insertEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 160, 40));
+        EmployeePanel.add(insertEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 160, 40));
 
         EmpIDinsert.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         EmpIDinsert.setForeground(new java.awt.Color(240, 240, 240));
@@ -341,6 +373,16 @@ public class Hotel_Mangment extends javax.swing.JFrame {
         });
         EmployeePanel.add(empHotelID, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, 100, -1));
 
+        displayRoom1.setBackground(new java.awt.Color(53, 205, 153));
+        displayRoom1.setText("display");
+        displayRoom1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        displayRoom1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                displayRoom1ActionPerformed(evt);
+            }
+        });
+        EmployeePanel.add(displayRoom1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 300, 160, 40));
+
         jTabbedPane1.addTab("Employee", EmployeePanel);
 
         CustomerPanel.setBackground(new java.awt.Color(32, 33, 55));
@@ -354,7 +396,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 removeCustomerActionPerformed(evt);
             }
         });
-        CustomerPanel.add(removeCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 260, 160, 40));
+        CustomerPanel.add(removeCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 160, 40));
 
         updateCustomer.setBackground(new java.awt.Color(53, 205, 153));
         updateCustomer.setText("update");
@@ -364,7 +406,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 updateCustomerActionPerformed(evt);
             }
         });
-        CustomerPanel.add(updateCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, 160, 40));
+        CustomerPanel.add(updateCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 160, 40));
 
         insertCustomer.setBackground(new java.awt.Color(53, 205, 153));
         insertCustomer.setText("insert");
@@ -374,7 +416,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 insertCustomerActionPerformed(evt);
             }
         });
-        CustomerPanel.add(insertCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 160, 40));
+        CustomerPanel.add(insertCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 160, 40));
 
         CIDinsert.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         CIDinsert.setForeground(new java.awt.Color(240, 240, 240));
@@ -412,6 +454,16 @@ public class Hotel_Mangment extends javax.swing.JFrame {
         roomnumberinsert.setText("room number");
         CustomerPanel.add(roomnumberinsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, -1, 20));
 
+        displayCus.setBackground(new java.awt.Color(53, 205, 153));
+        displayCus.setText("display");
+        displayCus.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        displayCus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                displayCusActionPerformed(evt);
+            }
+        });
+        CustomerPanel.add(displayCus, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, 160, 40));
+
         jTabbedPane1.addTab("Customer", CustomerPanel);
 
         RolePanel.setBackground(new java.awt.Color(32, 33, 55));
@@ -425,7 +477,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 removeRoleActionPerformed(evt);
             }
         });
-        RolePanel.add(removeRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 270, 160, 40));
+        RolePanel.add(removeRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 160, 40));
 
         updateRole.setBackground(new java.awt.Color(53, 205, 153));
         updateRole.setText("update");
@@ -435,7 +487,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 updateRoleActionPerformed(evt);
             }
         });
-        RolePanel.add(updateRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 160, 40));
+        RolePanel.add(updateRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 160, 40));
 
         insertRole.setBackground(new java.awt.Color(53, 205, 153));
         insertRole.setText("insert");
@@ -445,7 +497,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 insertRoleActionPerformed(evt);
             }
         });
-        RolePanel.add(insertRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 160, 40));
+        RolePanel.add(insertRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 160, 40));
 
         roleNameinsert.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         roleNameinsert.setForeground(new java.awt.Color(240, 240, 240));
@@ -471,6 +523,16 @@ public class Hotel_Mangment extends javax.swing.JFrame {
         });
         RolePanel.add(roleRank, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 240, -1));
 
+        displayRole.setBackground(new java.awt.Color(53, 205, 153));
+        displayRole.setText("display");
+        displayRole.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        displayRole.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                displayRoleActionPerformed(evt);
+            }
+        });
+        RolePanel.add(displayRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 270, 160, 40));
+
         jTabbedPane1.addTab("Role", RolePanel);
 
         Workpanel.setBackground(new java.awt.Color(32, 33, 55));
@@ -484,7 +546,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 removeWorkActionPerformed(evt);
             }
         });
-        Workpanel.add(removeWork, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 270, 160, 40));
+        Workpanel.add(removeWork, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, 160, 40));
 
         updateWork.setBackground(new java.awt.Color(53, 205, 153));
         updateWork.setText("update");
@@ -494,7 +556,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 updateWorkActionPerformed(evt);
             }
         });
-        Workpanel.add(updateWork, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 160, 40));
+        Workpanel.add(updateWork, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 160, 40));
 
         insertWork.setBackground(new java.awt.Color(53, 205, 153));
         insertWork.setText("insert");
@@ -504,7 +566,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 insertWorkActionPerformed(evt);
             }
         });
-        Workpanel.add(insertWork, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 160, 40));
+        Workpanel.add(insertWork, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 160, 40));
 
         roleNameinsert1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         roleNameinsert1.setForeground(new java.awt.Color(240, 240, 240));
@@ -529,6 +591,16 @@ public class Hotel_Mangment extends javax.swing.JFrame {
             }
         });
         Workpanel.add(workRoleName, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, 240, -1));
+
+        displayWork.setBackground(new java.awt.Color(53, 205, 153));
+        displayWork.setText("display");
+        displayWork.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        displayWork.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                displayWorkActionPerformed(evt);
+            }
+        });
+        Workpanel.add(displayWork, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 270, 160, 40));
 
         jTabbedPane1.addTab("work AS", Workpanel);
 
@@ -578,7 +650,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
         var name = roleName.getText();
         var rank = roleRank.getText();
         try {
-            Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel?serverTimeZone=UTC", "root", "ahmad");
+            Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel", "root", "ahmad");
             System.out.println("connection done");
             PreparedStatement p = c.prepareStatement("INSERT INTO `role`(`name`, `rank`) VALUES (?,?)");
             p.setString(1, name);
@@ -598,7 +670,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
         var name = roleName.getText();
         var rank = roleRank.getText();
         try {
-            Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel?serverTimeZone=UTC", "root", "ahmad");
+            Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel", "root", "ahmad");
             System.out.println("connection done");
             PreparedStatement p = c.prepareStatement("UPDATE `role` SET `rank` = ? WHERE `role`.`name` = ?");
             p.setString(1, rank);
@@ -614,7 +686,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
     private void removeRoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeRoleActionPerformed
         var name = roleName.getText();
         try {
-            Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel?serverTimeZone=UTC", "root", "ahmad");
+            Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel", "root", "ahmad");
             System.out.println("connection done");
             PreparedStatement p = c.prepareStatement("DELETE FROM `role` WHERE `role`.`name` = ?");
             p.setString(1, name);
@@ -636,7 +708,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
             try {
                 ID = Integer.parseInt(id);
                 RoomNumber = Integer.parseInt(roomID);
-                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel?serverTimeZone=UTC", "root", "ahmad");
+                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel", "root", "ahmad");
                 System.out.println("connection done");
                 PreparedStatement p = c.prepareStatement("INSERT INTO `customer`(`ID`, `name`,`roomNumber`) VALUES (?,?,?)");
                 p.setInt(1, ID);
@@ -660,7 +732,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
             int RoomNumber;
             try {
                 RoomNumber = Integer.parseInt(roomID);
-                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel?serverTimeZone=UTC", "root", "ahmad");
+                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel", "root", "ahmad");
                 System.out.println("connection done");
                 PreparedStatement p = c.prepareStatement("UPDATE `customer` SET `name` = ? ,`roomNumber`= ? WHERE `customer`.`ID` = ?");
                 p.setString(1, name);
@@ -681,7 +753,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
         if (id.length() != 0) {
             int ID = Integer.parseInt(id);
             try {
-                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel?serverTimeZone=UTC", "root", "ahmad");
+                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel", "root", "ahmad");
                 System.out.println("connection done");
                 PreparedStatement p = c.prepareStatement("DELETE FROM `customer` WHERE `customer`.`ID` = ?");
                 p.setInt(1, ID);
@@ -708,7 +780,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 ID = Integer.parseInt(id);
                 Salary = Double.parseDouble(salary);
                 HotelID = Integer.parseInt(hotelID);
-                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel?serverTimeZone=UTC", "root", "ahmad");
+                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel", "root", "ahmad");
                 System.out.println("connection done");
                 PreparedStatement p = c.prepareStatement("INSERT INTO `employee`(`ID`, `name`, `salary`, `HotelID`) VALUES (?,?,?,?)");
                 p.setInt(1, ID);
@@ -739,7 +811,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 ID = Integer.parseInt(id);
                 Salary = Double.parseDouble(salary);
                 HotelID = Integer.parseInt(hotelID);
-                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel?serverTimeZone=UTC", "root", "ahmad");
+                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel", "root", "ahmad");
                 System.out.println("connection done");
                 PreparedStatement p = c.prepareStatement("UPDATE `employee` SET `name` = ?, `salary` = ?, `HotelID` = ? WHERE `employee`.`ID` = ?");
                 p.setString(1, name);
@@ -764,7 +836,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
             int ID;
             try {
                 ID = Integer.parseInt(id);
-                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel?serverTimeZone=UTC", "root", "ahmad");
+                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel", "root", "ahmad");
                 System.out.println("connection done");
                 PreparedStatement p = c.prepareStatement("DELETE FROM `employee` WHERE `employee`.`ID` = ?");
                 p.setInt(1, ID);
@@ -792,7 +864,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 Number = Integer.parseInt(number);
                 Price = Double.parseDouble(price);
                 HotelID = Integer.parseInt(hotelID);
-                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel?serverTimeZone=UTC", "root", "ahmad");
+                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel", "root", "ahmad");
                 System.out.println("connection done");
                 PreparedStatement p = c.prepareStatement("INSERT INTO `room`(`number`, `price`, `type`, `HotelID`) VALUES (?,?,?,?)");
                 p.setInt(1, Number);
@@ -817,7 +889,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
             try {
                 Number = Integer.parseInt(number);
 
-                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel?serverTimeZone=UTC", "root", "ahmad");
+                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel", "root", "ahmad");
                 System.out.println("connection done");
                 PreparedStatement p = c.prepareStatement("DELETE FROM `room` WHERE `room`.`number` = ?");
                 p.setInt(1, Number);
@@ -837,7 +909,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
         if (x.length() != 0) {
             int ID = Integer.parseInt(x);
             try {
-                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel?serverTimeZone=UTC", "root", "ahmad");
+                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel", "root", "ahmad");
                 System.out.println("connection done");
                 PreparedStatement p = c.prepareStatement("DELETE FROM `hotel` WHERE `hotel`.`ID` = ?");
                 p.setInt(1, ID);
@@ -859,7 +931,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
         if (x.length() != 0) {
             int ID = Integer.parseInt(x);
             try {
-                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel?serverTimeZone=UTC", "root", "ahmad");
+                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel", "root", "ahmad");
                 System.out.println("connection done");
                 PreparedStatement p = c.prepareStatement("UPDATE `hotel` SET `name`=?,`location`=? WHERE `hotel`.`ID` = ?");
                 //p.setInt(1,ID);
@@ -893,7 +965,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
         if (id.length() != 0) {
             int ID = Integer.parseInt(id);
             try {
-                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel?serverTimeZone=UTC", "root", "ahmad");
+                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel", "root", "ahmad");
                 System.out.println("connection done");
                 PreparedStatement p = c.prepareStatement("INSERT INTO `hotel`(`ID`, `name`, `location`) VALUES (?,?,?)");
                 p.setInt(1, ID);
@@ -921,7 +993,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 Number = Integer.parseInt(number);
                 Price = Double.parseDouble(price);
                 HotelID = Integer.parseInt(hotelID);
-                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel?serverTimeZone=UTC", "root", "ahmad");
+                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel", "root", "ahmad");
                 System.out.println("connection done");
                 PreparedStatement p = c.prepareStatement("UPDATE `room` SET `price`=?,`type`=?,`HotelID`=? WHERE `room`.`number` = ?");
                 p.setDouble(1, Price);
@@ -932,8 +1004,20 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 c.close();
                 System.out.println("update done");
             } catch (SQLException e) {
+                var f = new Frame();
+                f.addWindowListener((WindowListener) this);
+                f.setSize(300,300);
+                f.setLayout(null);
+                f.setVisible(true);
+                JOptionPane.showConfirmDialog(f,e.getMessage());
                 e.printStackTrace();
             } catch (Exception e) {
+                var f = new Frame();
+                f.addWindowListener((WindowListener) this);
+                f.setSize(300,300);
+                f.setLayout(null);
+                f.setVisible(true);
+                JOptionPane.showConfirmDialog(f,e.getMessage());
                 e.printStackTrace();
             }
         }
@@ -987,7 +1071,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
             int ID;
             try {
                 ID = Integer.parseInt(id);
-                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel?serverTimeZone=UTC", "root", "ahmad");
+                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel", "root", "ahmad");
                 System.out.println("connection done");
                 PreparedStatement p = c.prepareStatement("DELETE FROM `working as` WHERE (`working as`.`EmployeeID` = ? and `working as`.`RoleName` = ?) ");
                 p.setInt(1, ID);
@@ -1010,7 +1094,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
             int ID;
             try {
                 ID = Integer.parseInt(id);
-                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel?serverTimeZone=UTC", "root", "ahmad");
+                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel", "root", "ahmad");
                 System.out.println("connection done");
                 PreparedStatement p = c.prepareStatement("UPDATE `working as` SET `RoleName`= ? WHERE `working as`.`EmployeeID` = ?");
                 p.setString(1, name);
@@ -1020,6 +1104,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
                 System.out.println("update done");
             } catch (SQLException e) {
                 e.printStackTrace();
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -1033,7 +1118,7 @@ public class Hotel_Mangment extends javax.swing.JFrame {
             int ID;
             try {
                 ID = Integer.parseInt(id);
-                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel?serverTimeZone=UTC", "root", "ahmad");
+                Connection c = DriverManager.getConnection("jdbc:mysql://localhost/manage_hotel", "root", "ahmad");
                 System.out.println("connection done");
                 PreparedStatement p = c.prepareStatement("INSERT INTO `working as`(`EmployeeID`, `RoleName`) VALUES (?,?)");
                 p.setInt(1, ID);
@@ -1060,6 +1145,42 @@ public class Hotel_Mangment extends javax.swing.JFrame {
     private void CusRoomNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CusRoomNumberActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CusRoomNumberActionPerformed
+
+    private void displayHotelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayHotelActionPerformed
+        // TODO add your handling code here:
+        t.displayhotel();
+        t.setVisible(true);
+    }//GEN-LAST:event_displayHotelActionPerformed
+
+    private void displayRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayRoomActionPerformed
+        // TODO add your handling code here:
+        t.displayRoom();
+        t.setVisible(true);
+    }//GEN-LAST:event_displayRoomActionPerformed
+
+    private void displayRoom1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayRoom1ActionPerformed
+        // TODO add your handling code here:
+        t.displayeEmp();
+        t.setVisible(true);
+    }//GEN-LAST:event_displayRoom1ActionPerformed
+
+    private void displayCusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayCusActionPerformed
+        // TODO add your handling code here:
+        t.displayeCus();
+        t.setVisible(true);
+    }//GEN-LAST:event_displayCusActionPerformed
+
+    private void displayRoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayRoleActionPerformed
+        // TODO add your handling code here:
+        t.displayeRole();
+        t.setVisible(true);
+    }//GEN-LAST:event_displayRoleActionPerformed
+
+    private void displayWorkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayWorkActionPerformed
+        // TODO add your handling code here:
+        t.displayeWork();
+        t.setVisible(true);
+    }//GEN-LAST:event_displayWorkActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1118,6 +1239,12 @@ public class Hotel_Mangment extends javax.swing.JFrame {
     private javax.swing.JPanel Workpanel;
     private javax.swing.JTextField customerID;
     private javax.swing.JTextField customerName;
+    private javax.swing.JButton displayCus;
+    private javax.swing.JButton displayHotel;
+    private javax.swing.JButton displayRole;
+    private javax.swing.JButton displayRoom;
+    private javax.swing.JButton displayRoom1;
+    private javax.swing.JButton displayWork;
     private javax.swing.JTextField empHotelID;
     private javax.swing.JTextField empID;
     private javax.swing.JTextField empName;
